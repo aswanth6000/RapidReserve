@@ -2,6 +2,7 @@ import express from "express";
 import { CurrentUserRouter } from "./routes/current-user";
 import { signupRouter } from "./routes/signup";
 import { signinRouter } from "./routes/signin";
+import { errorHanler } from "./middleware/errror-handler";
 
 import { json } from 'body-parser';
 
@@ -13,6 +14,7 @@ app.use(json());
 app.use(CurrentUserRouter)
 app.use(signupRouter)
 app.use(signinRouter);
+app.use(errorHanler);
 
 
 
